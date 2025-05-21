@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=LabActivity4_NC_IfElse
+comment1.params=
+comment1.target=LabActivity4_NC_IfElse()
+comment2.params=sales\ income
+comment2.target=LabActivity4_NC_IfElse(double,\ double)
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+numComments=4
