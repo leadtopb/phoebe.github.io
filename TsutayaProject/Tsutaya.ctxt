@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Tsutaya
+comment1.params=
+comment1.target=Tsutaya()
+comment2.params=title\ author\ genre\ price\ stock
+comment2.target=Tsutaya(java.lang.String,\ java.lang.String,\ java.lang.String,\ double,\ int)
+numComments=3
