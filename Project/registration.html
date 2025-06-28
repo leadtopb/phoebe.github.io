@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | University of Sylvanian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="school.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .strength {
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    .weak {
+      background-color: #e57373;
+    }
+    .medium {
+      background-color: #fdd835;
+      color: #333;
+    }
+    .strong {
+      background-color: #81c784;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="timetable.html">Timetable</a></li>
+        <li><a href="registration.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Student Registration</h1>
+    <p style="text-align: center;">Please fill in the form to register as a new student.</p>
+
+    <form>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" oninput="checkPassword()" required>
+
+      <div id="strengthMsg" class="strength"></div>
+
+      <label for="confirm">Confirm Password:</label>
+      <input type="password" id="confirm" required>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 University of Sylvanian. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function checkPassword() {
+      const pw = document.getElementById("password").value;
+      const msg = document.getElementById("strengthMsg");
+
+      let strength = 0;
+
+      if (pw.length >= 6) strength++;
+      if (/[A-Z]/.test(pw)) strength++;
+      if (/[0-9]/.test(pw)) strength++;
+      if (/[^A-Za-z0-9]/.test(pw)) strength++;
+
+      msg.className = "strength"; // reset class
+
+      if (pw.length === 0) {
+        msg.textContent = "";
+        return;
+      }
+
+      if (strength <= 1) {
+        msg.textContent = "Too Weak";
+        msg.classList.add("weak");
+      } else if (strength === 2 || strength === 3) {
+        msg.textContent = "Medium Strength";
+        msg.classList.add("medium");
+      } else {
+        msg.textContent = "Strong Password";
+        msg.classList.add("strong");
+      }
+    }
+  </script>
+
+</body>
+</html>
